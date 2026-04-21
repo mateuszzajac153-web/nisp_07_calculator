@@ -1,0 +1,13 @@
+# Kalkulator JS
+To jest fizycczny kalkulator HTML, w którym można dokonywać
+ podstawowych operacji matematycznych.
+Projekt utworzony podczas zajęć z przedmiotu Narzędzia i
+środowiska programistyczne.
+
+## Użyte technologie
+- HTML5
+- CSS3
+- JavaScript
+
+## Autor
+**Mateusz Zając**, student AT Tarnów.
