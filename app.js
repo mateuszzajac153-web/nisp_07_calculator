@@ -26,19 +26,28 @@ buttons.forEach(button => {
             return;
         }
 
-        // Operator +
-        if (value === "+") {
+        // Operatory + i -
+        if (value === "+" || value === "-") {
             if (current === "") return;
             previous = current;
             current = "";
-            operator = "+";
+            operator = value;
             return;
         }
 
         // Równa się
         if (action === "equal") {
-            if (operator === "+" && previous && current) {
-                const result = Number(previous) + Number(current);
+            if (previous && current && operator) {
+                let result;
+
+                if (operator === "+") {
+                    result = Number(previous) + Number(current);
+                }
+
+                if (operator === "-") {
+                    result = Number(previous) - Number(current);
+                }
+
                 display.textContent = result;
 
                 // reset po obliczeniu
