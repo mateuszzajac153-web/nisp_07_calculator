@@ -26,8 +26,8 @@ buttons.forEach(button => {
             return;
         }
 
-        // Operatory + i -
-        if (value === "+" || value === "-") {
+        // Operatory + - * /
+        if (value === "+" || value === "-" || value === "*" || value === "/") {
             if (current === "") return;
             previous = current;
             current = "";
@@ -46,6 +46,21 @@ buttons.forEach(button => {
 
                 if (operator === "-") {
                     result = Number(previous) - Number(current);
+                }
+
+                if (operator === "*") {
+                    result = Number(previous) * Number(current);
+                }
+
+                if (operator === "/") {
+                    if (Number(current) === 0) {
+                        display.textContent = "Error";
+                        current = "";
+                        previous = "";
+                        operator = null;
+                        return;
+                    }
+                    result = Number(previous) / Number(current);
                 }
 
                 display.textContent = result;
